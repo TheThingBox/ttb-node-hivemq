@@ -1,0 +1,20 @@
+{
+  "name": "ttb-node-hivemq",
+  "version": "0.0.2",
+  "description": "This node allow the user to set a MQTT broker for Machine-To-Machine communication and the Internet of Things.",
+  "node-red": {
+    "nodes": {
+      "hivemq": "hivemq.js"
+    }
+  },
+  "keywords": [
+    "TheThingBox",
+    "node-red",
+    "hivemq"
+  ],
+  "dependencies": {
+    "mqtt": "2.17.0"
+  },
+  "author": "http://www.digitalairways.com/",
+  "license": "http://www.wtfpl.net"
+}

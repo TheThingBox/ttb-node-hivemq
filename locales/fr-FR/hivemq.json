@@ -1,0 +1,6 @@
+{
+  "hivemq": {
+    "topic": "Sujet",
+    "name": "Nom"
+  }
+}

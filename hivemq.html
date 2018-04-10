@@ -1,0 +1,93 @@
+<script type="text/x-red" data-template-name="HiveMQ out">
+  <div class="form-row">
+    <label for="node-input-topic"><i class="icon-tag"></i> <span data-i18n="hivemq.topic"></span></label>
+    <input type="text" id="node-input-topic" data-i18n="[placeholder]hivemq.topic">
+  </div>
+  <br/>
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> <span data-i18n="hivemq.name"></span></label>
+    <input type="text" id="node-input-name" data-i18n="[placeholder]hivemq.name">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="HiveMQ out">
+  <font size="-2"> MQTT broker for Machine-To-Machine communication and the Internet of Things</font>
+  <h2><p>HiveMQ node</p></h2>
+   <font size="-1"><p>HiveMQ is a MQTT broker, specifically for enterprises which find themself in the emerging age of Machine-to-Machine communication (M2M) and the Internet of Things (IoT)</p>
+   <p>http://www.hivemq.com/</p></font>
+
+   <p><b>Node description :</b></p>
+   <font size="-1"><p>This node allows to publish the <b>payload</b> of the message sent in the HiveMQ Node to the HiveMQ server
+   <br />To access to the data : http://www.hivemq.com/demos/websocket-client/
+   <br />Click on connect, to subscribe : write the topic name.</p></font>
+
+   <p><b>How to : </b></p>
+   <font size ="-1"><p>- topic : The topic where send data.</p></font>
+</script>
+
+<script type="text/javascript">
+  RED.nodes.registerType('HiveMQ out', {
+    category: 'output',
+    color: "#fff",
+    defaults: {
+      name: {value: ""},
+      topic : {values: ""}
+    },
+    inputs: 1,
+    outputs: 0,
+    icon: "hivemq.png",
+    label: function() {
+      return this.name||this.topic||"HiveMQ";
+    },
+    labelStyle: function() {
+      return this.name?"node_label_italic":"";
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="HiveMQ in">
+  <div class="form-row">
+    <label for="node-input-topic"><i class="icon-tag"></i> <span data-i18n="hivemq.topic"></label>
+    <input type="text" id="node-input-topic" data-i18n="[placeholder]hivemq.topic">
+  </div>
+  <br/>
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> <span data-i18n="hivemq.name"></span></label>
+    <input type="text" id="node-input-name" data-i18n="[placeholder]hivemq.name">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="HiveMQ in">
+  <font size="-2"> MQTT broker for Machine-To-Machine communication and the Internet of Things</font>
+  <h2><p>HiveMQ node</p></h2>
+   <font size="-1"><p>HiveMQ is a MQTT broker, specifically for enterprises which find themself in the emerging age of Machine-to-Machine communication (M2M) and the Internet of Things (IoT)</p>
+   <p>http://www.hivemq.com/</p></font>
+
+   <p><b>Node description :</b></p>
+   <font size="-1"><p>This node allows to listen every message published on a topic on HiveMQ server.
+   <br />To access to the data : http://www.hivemq.com/demos/websocket-client/
+   <br />Click on connect, to publish : write the topic name and the message.</p></font>
+
+   <p><b>How to : </b></p>
+   <font size ="-1"><p>- topic : The topic to subscribe.</p></font>
+</script>
+
+<script type="text/javascript">
+  RED.nodes.registerType('HiveMQ in', {
+    category: 'input',
+    color: "#fff",
+    defaults: {
+      name: {value: ""},
+      topic : {values: "", required: true}
+    },
+    inputs:0,
+    outputs:1,
+    icon: "hivemq.png",
+    label: function() {
+      return this.name||this.topic||"HiveMQ";
+    },
+    labelStyle: function() {
+      return this.name?"node_label_italic":"";
+    }
+  });
+</script>
